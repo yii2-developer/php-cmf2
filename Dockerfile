@@ -1,8 +1,7 @@
 FROM nsign/php-docker:7.1-fpm
 
 RUN \
-    apt-get install -y php5-intl libicu-dev \
-    && pecl install intl \
+    && apt-get install -y --no-install-recommends libicu52 libicu-dev \
     && docker-php-ext-install intl \
     && docker-php-ext-enable intl \
 
